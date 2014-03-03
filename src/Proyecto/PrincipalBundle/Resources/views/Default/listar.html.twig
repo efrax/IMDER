@@ -1,0 +1,150 @@
+{% extends "ProyectoPrincipalBundle:Default:layout.html.twig" %}
+
+
+{% block menu %}
+	{{ parent() }}
+{% endblock %}
+
+{% block menucito %}
+	{{ parent() }}
+{% endblock %}
+
+    {% block texto %}
+        <div id="content">
+            <div id="section">
+			    {# menucito #}
+
+
+                {% if slug is defined %}
+                
+                    {% if slug == 'categoria' %}
+                    	<div class='contenido'>
+                         <table border='1'>
+                         	<th>Nombre</th>
+	                    	{% for categoria in arreglo %}
+		                    	<tr class='fila_{{categoria.idcategoria}}'>
+		                    		<td>
+		                    			<div id='valor_fila' valor='{{categoria.idcategoria}}'>
+		                    				{{categoria.nombre}}
+		                    			</div>
+		                    	    </td>
+		                    	    <td>
+		                    	    	<a href="javascript:void(0)" class='editar'>Editar</a>
+		                    	    </td>
+		                    	    <td>
+		                    	    	<a href="javascript:void(0)" class='eliminar'>Eliminar</a>
+		                    	    </td>
+		                    	</tr>
+		                    {% endfor %}
+		                </div>			                    	
+                    {% elseif slug == 'cancha' %}
+                    	<div class='contenido'>
+                         <table border='1'>
+                         	<th>Nombre</th>
+                         	<th>Direccion</th>
+	                    	{% for cancha in arreglo %}
+		                    	<tr class='fila_{{cancha.idcancha}}'>
+		                    		<td>
+		                    			<div id='valor_fila' valor='{{cancha.idcancha}}'>
+		                    				{{cancha.nombre}}
+		                    			</div>
+		                    	    </td>
+		                    	    <td>
+		                    	    	{{cancha.direccion}}
+		                    	    </td>
+		                    	    <td>
+		                    	    	<a href="javascript:void(0)" class='editar'>Editar</a>
+		                    	    </td>
+		                    	    <td>
+		                    	    	<a href="javascript:void(0)" class='eliminar'>Eliminar</a>
+		                    	    </td>
+		                    	</tr>
+		                    {% endfor %}
+		                </div>    	
+                    {% elseif slug == 'entrenador' %}
+                        <div class='contenido'>
+                         <table border='1'>
+                         	<th>Nombre</th>
+                         	<th>Cedula</th>
+                         	<th>Disciplina</th>
+                         	<th>Direccion de residencia</th>
+	                    	{% for entrenador in arreglo %}
+		                    	<tr class='fila_{{entrenador.identrenador}}'>
+		                    		<td>
+		                    			<div id='valor_fila' valor='{{entrenador.identrenador}}'>
+		                    				{{entrenador.nombre}}
+		                    			</div>
+		                    	    </td>
+		                    	    <td>
+		                    	    	{{entrenador.cedula}}
+		                    	    </td>
+		                    	    <td>
+		                    	    	{{entrenador.disciplina}}
+		                    	    </td>
+		                    	    <td>
+		                    	    	{{entrenador.direccion}}
+		                    	    </td>
+		                    	    <td>
+		                    	    	<a href="javascript:void(0)" class='editar'>Editar</a>
+		                    	    </td>
+		                    	    <td>
+		                    	    	<a href="javascript:void(0)" class='eliminar'>Eliminar</a>
+		                    	    </td>
+		                    	</tr>
+		                    {% endfor %}
+		                </div>
+		            {% elseif slug == 'deporte'%} 
+		                <div class='contenido'>
+                         <table border='1'>
+                         	<th>Nombre</th>
+                         	<th>Entrenador</th>
+                         	<th>Categoria</th>
+                         	<th>Cancha</th>
+	                    	{% for deporte in arreglo %}
+		                    	<tr class='fila_{{deporte.iddeportes}}'>
+		                    		<td>
+		                    			<div id='valor_fila' valor='{{deporte.iddeportes}}'>
+		                    				{{deporte.nombre}}
+		                    			</div>
+		                    	    </td>
+		                    	    <td>
+		                    	    	{{deporte.entrenador.nombre}}
+		                    	    </td>
+		                    	    <td>
+		                    	    	{{deporte.categoria.nombre}}
+		                    	    </td>
+		                    	    <td>
+		                    	    	{{deporte.cancha.nombre}}
+		                    	    </td>
+		                    	    <td>
+		                    	    	<a href="javascript:void(0)" class='editar'>Editar</a>
+		                    	    </td>
+		                    	    <td>
+		                    	    	<a href="javascript:void(0)" class='eliminar'>Eliminar</a>
+		                    	    </td>
+		                    	</tr>
+		                    {% endfor %}
+		                </div>
+                    {% endif %}                       
+                    
+                {% else %}
+                    <div id='contenido'>
+                        <h1>Bienvenido seleccione una opcion</h1>
+                    </div>
+                {% endif %}
+                			{# vriable tipo #}
+	                    	<input type='hidden' id='tipo' value = {{slug}}>
+	                    	
+                    	</table>
+                    	{# fin de tabla #}	                
+            </div>
+            {# fin div section #}
+        </div>
+        {# fin div content #}
+{% endblock %}
+{# fin de block superior #}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+{# fin de block footer #}

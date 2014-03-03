@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Entrenador" table="Entrenador">
+    <id name="identrenador" type="integer" column="idEntrenador">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombre" type="string" column="Nombre" length="45" nullable="true"/>
+    <field name="cedula" type="string" column="Cedula" length="45" nullable="true"/>
+    <field name="disciplina" type="string" column="Disciplina" length="45" nullable="true"/>
+    <field name="direccion" type="string" column="Direccion" length="45" nullable="true"/>
+    <field name="telefono" type="string" column="Telefono" length="45" nullable="true"/>
+    <field name="email" type="string" column="Email" length="45" nullable="true"/>
+  </entity>
+</doctrine-mapping>

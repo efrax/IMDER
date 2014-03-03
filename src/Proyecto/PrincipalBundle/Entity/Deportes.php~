@@ -1,0 +1,62 @@
+<?php
+
+namespace Proyecto\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Deportes
+ *
+ * @ORM\Table(name="Deportes")
+ * @ORM\Entity
+ */
+class Deportes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDeportes", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $iddeportes;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nombre", type="string", length=45, nullable=true)
+     */
+    private $nombre;
+
+    /**
+     * @var \Cancha
+     *
+     * @ORM\ManyToOne(targetEntity="Cancha")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Cancha", referencedColumnName="idCancha")
+     * })
+     */
+    private $cancha;
+
+    /**
+     * @var \Entrenador
+     *
+     * @ORM\ManyToOne(targetEntity="Entrenador")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Entrenador", referencedColumnName="idEntrenador")
+     * })
+     */
+    private $entrenador;
+
+    /**
+     * @var \Categoria
+     *
+     * @ORM\ManyToOne(targetEntity="Categoria")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Categoria", referencedColumnName="idCategoria")
+     * })
+     */
+    private $categoria;
+
+
+}

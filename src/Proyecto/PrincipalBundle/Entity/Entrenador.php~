@@ -1,0 +1,67 @@
+<?php
+
+namespace Proyecto\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Entrenador
+ *
+ * @ORM\Table(name="Entrenador")
+ * @ORM\Entity
+ */
+class Entrenador
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idEntrenador", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $identrenador;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nombre", type="string", length=45, nullable=true)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Cedula", type="string", length=45, nullable=true)
+     */
+    private $cedula;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Disciplina", type="string", length=45, nullable=true)
+     */
+    private $disciplina;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Direccion", type="string", length=45, nullable=true)
+     */
+    private $direccion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Telefono", type="string", length=45, nullable=true)
+     */
+    private $telefono;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Email", type="string", length=45, nullable=true)
+     */
+    private $email;
+
+
+}

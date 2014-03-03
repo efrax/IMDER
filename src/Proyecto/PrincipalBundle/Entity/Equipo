@@ -1,0 +1,130 @@
+<?php
+
+namespace Proyecto\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Equipo
+ *
+ * @ORM\Table(name="Equipo")
+ * @ORM\Entity
+ */
+class ClassName extends AnotherClass
+{
+	
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idEquipo", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idequipo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nombre", type="string", length=45, nullable=true)
+     */
+    private $nombre;
+
+    /**
+     * @var \Deportes
+     *
+     * @ORM\ManyToOne(targetEntity="Deportes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Deportes", referencedColumnName="idDeportes")
+     * })
+     */
+    private $deportes;
+
+    /**
+     * @var \Entrenador
+     *
+     * @ORM\ManyToOne(targetEntity="Entrenador")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Entrenador", referencedColumnName="idEntrenador")
+     * })
+     */
+    private $entrenador;
+
+    /**
+     * Get idEquipo
+     *
+     * @return integer 
+     */
+    public function getIdequipo()
+    {
+        return $this->idequipo;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return Entrenador
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+    
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set deportes
+     *
+     * @param \Proyecto\PrincipalBundle\Entity\Deportes $deportes
+     * @return Equipo
+     */
+    public function setDeportes(\Proyecto\PrincipalBundle\Entity\Deportes $deportes = null)
+    {
+        $this->deportes = $deportes;
+    
+        return $this;
+    }
+
+    /**
+     * Get deportes
+     *
+     * @return \Proyecto\PrincipalBundle\Entity\Deportes 
+     */
+    public function getDeportes()
+    {
+        return $this->deportes;
+    }
+
+    /**
+     * Set entrenador
+     *
+     * @param \Proyecto\PrincipalBundle\Entity\Deportes $entrenador
+     * @return Equipo
+     */
+    public function setDeportes(\Proyecto\PrincipalBundle\Entity\Deportes $entrenador = null)
+    {
+        $this->entrenador = $entrenador;
+    
+        return $this;
+    }
+
+    /**
+     * Get deportes
+     *
+     * @return \Proyecto\PrincipalBundle\Entity\Deportes 
+     */
+    public function getEntrenador()
+    {
+        return $this->entrenador;
+    }
+}

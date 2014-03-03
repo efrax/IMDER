@@ -1,0 +1,111 @@
+{% extends "ProyectoPrincipalBundle:Default:layout.html.twig" %}
+ 
+    {% block body %}
+        {{ parent() }}
+    {% endblock %}
+    
+    {% block menu %}
+        {{ parent() }}
+    {% endblock %}
+
+    {# menu vertical #}
+     {% block menucito %}
+        {{ parent() }}
+     {% endblock %}
+
+    {% block texto %}
+        <div id="content">
+            <div id="section">
+                
+                {% if slug is defined %}
+                    <div id='div_agregar'></div>
+                        {# inicio del form #}
+                        <form>
+
+                    {% if slug == 'categoria' %}   
+                        <div class='contenido'>                    
+                            Nombre Categoria<input type="text" class = 'nombre_categoria vaciar_categoria' placeholder="Ingrese Nombre de categoria">
+                            <br>
+                            <input type='hidden' class='tipo' value={{slug}}>
+                            <br>
+                            <input type='button' value='Agregar' class='agregar'> 
+                        </div>
+                    {% elseif slug == 'cancha' %} 
+                        <div class='contenido'>
+                            Nombre Cancha<input type="text" class = 'nombre_cancha vaciar_cancha'  placeholder="Ingrese Nombre de la cancha">
+                            <br>
+                            Direccion<input type="text" class = 'direccion_cancha vaciar_cancha'  placeholder="Ingrese Direccion de la cancha">
+                            <br>
+                            <input type='hidden' class='tipo' value={{slug}}>
+                            <br>
+                            <input type='button' value='Agregar' class='agregar'> 
+                        </div>
+                    {% elseif slug == 'entrenador' %}
+                        <div class='contenido'>
+                            Nombre<input type="text" class = 'nombre_entrenador vaciar_entrenador' placeholder="Ingrese Nombre del entrenador">
+                            <br>
+                            Cedula<input type="text" class = 'cedula_entrenador vaciar_entrenador'  placeholder="Ingrese la cedula del entrenador">
+                            <br>
+                            Disciplina<input type="text" class = 'disciplina_entrenador vaciar_entrenador' placeholder="Ingrese la disciplina del entrenador">
+                            <br>
+                            Direccion de residencia<input type="text" class = 'direccion_entrenador vaciar_entrenador' placeholder="Ingrese la direccion de residencia del Entrenador">
+                            Telefono<input type="text" class = 'telefono_entrenador vaciar_entrenador' placeholder="Ingrese el telefono">
+                            Email<input type="text" class = 'email_entrenador vaciar_entrenador' placeholder="Ingrese el telefono">
+                            <br>
+                            <input type='hidden' class='tipo' value={{slug}}>
+                            <br>
+                            <input type='button' value='Agregar' class='agregar'> 
+                        </div>
+                    {% elseif slug == 'deporte' %}
+                        <div class='contenido'>
+                            Nombre<input type="text" class = 'deporte_nombre_deporte vaciar_deporte' placeholder="Ingrese Nombre del Deporte">
+                            <br>
+                            Seleccione Entrenador
+                            <select class='deporte_nombre_entrenador'>
+                                <option value= ' ' selected></option>
+                                {% for arreglo in entrenadores %}
+                                    <option value={{arreglo.identrenador}}>{{arreglo.nombre}}</option>
+                                {% endfor %}
+                            </select>
+                            <br>
+                            Seleccione Categoria
+                            <select class='deporte_nombre_categoria'>
+                                <option value= ' ' selected></option>
+                                {% for arreglo in categorias %}
+                                    <option value={{arreglo.idcategoria}}>{{arreglo.nombre}}</option>
+                                {% endfor %}
+                            </select> 
+                            <br>
+                            Seleccione Cancha
+                            <select class='deporte_nombre_cancha'>
+                                <option value= ' ' selected></option>
+                                {% for arreglo in canchas %}
+                                    <option value={{arreglo.idcancha}}>{{arreglo.nombre}}</option>
+                                {% endfor %}
+                            </select>
+                            <br>
+                            <input type='hidden' class='tipo' value={{slug}}>
+                            <br>
+                            <input type='button' value='Agregar' class='agregar'>
+                        </div>
+                    {% endif %}                   
+                {% else %}
+
+                        <div class='contenido'>
+                            <h1>Bienvenido seleccione una opcion</h1>
+                        </div>
+                        
+                    
+                    
+
+                {% endif %}
+                    
+                        </form>
+                        {# fin del form #}
+                    </div>
+                    {# fin del div agregar #}
+            </div>
+            {# fin div section #}
+        </div>
+        {# fin div content #}
+{% endblock %}

@@ -1,0 +1,39 @@
+<?php
+
+namespace Proyecto\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Cancha
+ *
+ * @ORM\Table(name="Cancha")
+ * @ORM\Entity
+ */
+class Cancha
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idCancha", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idcancha;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nombre", type="string", length=45, nullable=true)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Direccion", type="string", length=45, nullable=true)
+     */
+    private $direccion;
+
+
+}

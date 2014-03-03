@@ -1,0 +1,233 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+	<body>
+		<!-- Header -->
+		<div id="header">
+		    <div class="shell">
+		        <!-- Logo -->
+		        <img src="{{ asset('images/der.jpg') }}" alt="Symfony!" />
+		        <!-- /Logo -->
+		        
+		        <!-- Navigation -->
+		        <div id="navigation">
+		            {% block menu %}
+		                <ul>
+		                    <li><a href="{{path('front',{'slug' : 'inicio'}) }}" class="active">Inicio</a></li>
+		                    <li><a href="{{path('front',{'slug' : 'usuario'}) }}">Area de Administrador</a></li>
+		                    <li><a href="{{path('front',{'slug' : 'fotos'}) }}">Álbum de fotos</a></li>
+		                  {#  <li><a href="#">SERVICES</a></li>
+		                    <li><a href="#">PROJECTS</a></li>
+		                    <li><a href="#">BLOG</a></li>
+		                    <li><a href="#">CONTACT</a></li> #}
+		                </ul>
+		            {% endblock %}
+		        </div>
+		        <!-- /Navigation -->
+		        <div class="cl">&nbsp;</div>
+		        
+		        <!-- Socials -->
+		        <div class="socials">
+		            <a href="#" class="socials-facebook" title="Connect on Facebook">facebook</a>
+		            <a href="#" class="socials-twitter" title="Follow us on Twitter">twitter</a>
+		        </div>
+		        <!-- /Socials -->
+		    </div>
+		</div>
+		<!-- /Header -->
+
+		<!-- Slider -->
+		<div id="slider">
+		    {% block slider %}
+		    {% endblock %}
+		</div>
+		<!-- /Slider -->
+
+		<!-- Main -->
+		<div id="main">
+		    <div class="bg-top">
+		        <div class="shell">
+
+		            {# <!-- texto --> #}
+		            <div id="welcome">                  
+
+					{% block menucito %}
+					     <div class="grey demo-container">
+							<ul id="drilldown-3">
+					             <li><a href="{{path('agregar',{'slug' : 'categoria'}) }}" tabindex="1">Agregar Categoria</a></li>
+					             <li><a href="{{path('listar',{'slug'  : 'categoria'}) }}" tabindex="2">Listar Categorias</a></li>
+					             <li><a href="{{path('agregar',{'slug' : 'cancha'}) }}" tabindex="3">Agregar Cancha</a></li>
+					             <li><a href="{{path('listar',{'slug'  : 'cancha'}) }}" tabindex="4">Listar canchas</a></li>
+					             <li><a href="{{path('agregar',{'slug' : 'entrenador'}) }}" tabindex="3">Agregar Entrenador</a></li>
+					             <li><a href="{{path('listar',{'slug'  : 'entrenador'}) }}" tabindex="4">Listar Entrenador</a></li>
+					             <li><a href="{{path('agregar',{'slug' : 'deporte'}) }}" tabindex="3">Agregar Deporte</a></li>
+					             <li><a href="{{path('listar',{'slug'  : 'deporte'}) }}" tabindex="4">Listar Deportes</a></li>
+					             <li><a href="{{path('agregar',{'slug' : 'equipo'}) }}" tabindex="3">Agregar Equipo</a></li>
+					             <li><a href="{{path('listar',{'slug'  : 'equipo'}) }}" tabindex="4">Listar Equipos</a></li>   
+							</ul>
+						</div>
+					{% endblock %}
+		                {% block texto %}
+		                {% endblock %}
+                        
+                        {% block fos_user_content %}
+                        {% endblock %}
+		            </div>
+		            {# <!-- /texto --> #}
+		            
+		            <!-- Barra uno -->
+		            {% block barra1 %}
+		            {% endblock %}
+		            <!-- /Barra 1 -->
+		            
+		            <!-- Barra 2 -->
+		            {% block barra2 %}
+		            {% endblock %}
+		            <!-- /Barra 2 -->
+		            
+		            <!-- Sidebar -->
+		            {% block sidebar %}
+		            {% endblock %}
+		            <!-- /Sidebar -->
+		            <div class="cl">&nbsp;</div>
+		        </div>
+		    </div>
+		</div>
+		<!-- /Main -->
+		
+		<!-- Footer -->
+		{% block footer %}
+			<div id="footer">
+	            <div class="shell">
+	                <!-- Footer Top -->
+	                {# <div class="top"> #}
+	                    {# <!-- Twitter -->
+	                    <div id="twitter">
+	                        <h2>PIXELTHIS ON TWITTER</h2>
+	                        <a href="#" class="button">FOLLOW US</a>
+	                        <div class="cl">&nbsp;</div>
+	                        
+	                        <div class="twitter-posts">
+	                            <ul>
+	                                <!-- Post -->
+	                                <li>
+	                                    <p><a href="#">Pixelthat</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In risus ipsum, gravida id condimentum et, dapibus eu tellus.</p>
+	                                    <h5>12 hours ago</h5>
+	                                </li>
+	                                <!-- /Post -->
+	                                
+	                                <!-- Post -->
+	                                <li>
+	                                    <p><a href="#">Pixelthat</a> Suspendisse potenti. Donec dapibus, dolor sit amet faucibus <a href="#">tincidun</a></p>
+	                                    <h5>12 hours ago</h5>
+	                                </li>
+	                                <!-- /Post -->
+	                                
+	                                <!-- Post -->
+	                                <li>
+	                                    <p><a href="#">Pixelthat</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In risus ipsum, gravida id condimentum et, dapibus eu tellus.</p>
+	                                    <h5>12 hours ago</h5>
+	                                </li>
+	                                <!-- /Post -->
+	                                
+	                                <!-- Post -->
+	                                <li>
+	                                    <p><a href="#">Pixelthat</a> Suspendisse potenti. Donec dapibus, dolor sit amet faucibus <a href="#">tincidun</a></p>
+	                                    <h5>12 hours ago</h5>
+	                                </li>
+	                                <!-- /Post -->
+	                            </ul>
+	                        </div>
+	                    </div>
+	                    <!-- /Twitter -->
+	                    
+	                    <!-- Flickr -->
+	                    <div id="flickr">
+	                        <h2>PIXELTHIS ON FLICKR</h2>
+	                        <a href="#" class="button">FOLLOW US</a>
+	                        <div class="cl">&nbsp;</div>
+	                        
+	                        <div class="flickr-pics">
+	                            <ul>
+	                                <li>
+	                                    <a href="css/pixel/images/flickr-thumb-1.jpg" rel="flckr-slideshow">
+	                                        <img src="{{ asset('css/pixel/images/flickr-thumb-1.jpg') }}" alt="Symfony!" /></a>
+	                                </li>
+	                                <li>
+	                                    <a href="css/pixel/images/flickr-thumb-2.jpg" rel="flckr-slideshow"><img src="{{ asset('css/pixel/images/flickr-thumb-2.jpg') }}" alt="Symfony!" /></a>
+	                                </li>
+	                                <li>
+	                                    <a href="css/pixel/images/flickr-thumb-3.jpg" rel="flckr-slideshow"><img src="{{ asset('css/pixel/images/flickr-thumb-3.jpg') }}" alt="Symfony!" /></a>
+	                                </li>
+	                                <li class="last">
+	                                    <a href="css/pixel/images/flickr-thumb-4.jpg" rel="flckr-slideshow"><img src="{{ asset('css/pixel/images/flickr-thumb-4.jpg') }}" alt="Symfony!" /></a>
+	                                </li>
+	                                <li>
+	                                    <a href="css/pixel/images/flickr-thumb-5.jpg" rel="flckr-slideshow"><img src="{{ asset('css/pixel/images/flickr-thumb-5.jpg') }}" alt="Symfony!" /></a>
+	                                </li>
+	                                <li>
+	                                    <a href="css/pixel/images/flickr-thumb-6.jpg" rel="flckr-slideshow"><img src="{{ asset('css/pixel/images/flickr-thumb-6.jpg') }}" alt="Symfony!" /></a>
+	                                </li>
+	                                <li>
+	                                    <a href="css/images/flickr-thumb-7.jpg" rel="flckr-slideshow"><img src="css/images/flickr-thumb-7.jpg" alt="" /></a>
+	                                </li>
+	                                <li class="last">
+	                                    <a href="css/pixel/images/flickr-thumb-8.jpg" rel="flckr-slideshow"><img src="{{ asset('css/pixel/images/flickr-thumb-8.jpg') }}" alt="Symfony!" /></a>
+	                                </li>
+	                                <li>
+	                                    <a href="css/images/flickr-thumb-9.jpg" rel="flckr-slideshow"><img src="css/images/flickr-thumb-9.jpg" alt="" /></a>
+	                                </li>
+	                                <li>
+	                                    <a href="css/pixel/images/flickr-thumb-10.jpg" rel="flckr-slideshow"><img src="{{ asset('css/pixel/images/flickr-thumb-19.jpg') }}" alt="Symfony!" /></a>
+	                                </li>
+	                                <li>
+	                                    <a href="css/pixel/images/flickr-thumb-11.jpg" rel="flckr-slideshow">
+	                                        <img src="{{ asset('css/pixel/images/flickr-thumb-11.jpg') }}" alt="Symfony!" /></a>
+	                                </li>
+	                                <li class="last">
+	                                    <a href="css/pixel/images/flickr-thumb-12.jpg" rel="flckr-slideshow">
+	                                        <img src="{{ asset('css/pixel/images/flickr-thumb-12.jpg') }}" alt="Symfony!" /></a>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                    <!-- /Flickr --> #}
+	                    
+	                    <div class="cl">&nbsp;</div>
+	                </div>
+	                <!-- /Footer Top -->
+	                
+	                <!-- Footer Bottom -->
+	                <div class="bottom">
+	                    <!-- Footer Nav -->
+	                 {#    <div class="navigation">
+	                        <ul>
+	                            <li><a href="#" class="active">HOME</a></li>
+	                            <li><a href="#">ABOUT</a></li>
+	                            <li><a href="#">SERVICES</a></li>
+	                            <li><a href="#">PROJECTS</a></li>
+	                            <li><a href="#">BLOG</a></li>
+	                            <li class="last"><a href="#">CONTACT</a></li>
+	                        </ul>
+	                    </div> #}
+	                    <!-- /Footer Nav -->
+	                    
+	                    <!-- Copyrights -->
+	                    <div class="right">
+	                        <p>&copy;IMDER.</p>
+	                        <p>Trabajo elaborado por: <a href="http://chocotemplates.com" target="_blank" title="The Sweetest CSS Templates WorldWide" class="choco">Monica Medina</a></p>
+	                    </div>
+	                    <!-- /Copyrights -->
+	                    
+	                    <div class="cl">&nbsp;</div>
+	                </div>
+	                <!-- /Footer Bottom -->
+	            </div>
+	        </div>
+		{% endblock %}
+		<!-- /Footer -->
+	</body>
+{% endblock %}
+{# fin block body #}
+

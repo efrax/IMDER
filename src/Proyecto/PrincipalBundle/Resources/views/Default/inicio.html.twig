@@ -1,0 +1,233 @@
+{% extends "ProyectoPrincipalBundle:Default:layout_portada.html.twig" %}
+
+	{% block menu %}
+		{{ parent() }}
+	{% endblock %}
+
+	{% block slider %}
+	    <div class="shell">
+	        <ul>
+	            <!-- Slide -->
+	            <li>
+	                <div class="image">
+	                    <img src="{{ asset('images/volf2_mod.png') }}" alt="Symfony!" />
+	                </div>
+	                
+	                <div class="data">
+	                    <h2 class="slider-h">Instituto Municipal de Deporte y Recreación de Cajigal.</h2>
+	                    
+	                    <p>IMDER</p>
+	                    
+	                    {# <a href="#" class="button">SEE THE PROJECT &gt;</a> #}
+	                </div>
+	            </li>
+	            <!-- /Slide -->
+	        </ul>
+	    </div>
+	{% endblock %}
+
+	{% block texto %}
+	    <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	        <h3>IMDER</h3>
+	        <br>
+	        El instituto municipal del deporte y recreación IMDER fue creado el 19 de agosto de 2002 en la municipalidad de Cajigal por el alcalde Algencio Monasterios, y los concejales Getulio Méndez, Víctor Contreras, Enrique Subero, Osvaldo Córdova,  María Felce, José Ramón Díaz, el sindico procurador Carlos Rodríguez y la secretaria municipal Luisa Marcano, con la finalidad de promocionar, fomentar y dirigir la actividad deportiva Municipal.
+			El IMDER se fundo con el objeto de proporcionar la intervención del Municipio en la Promoción y desarrollo del Deporte, así como en la construcción, dotación, mantenimiento y protección de la infraestructura deportiva en la jurisdicción Municipal; coadyuvando a la formación integral de las personas en lo físico, intelectual, moral y social. 
+			El IMDER Procura fomentar la recreación y la sana inversión del tiempo libre; educar para la comprensión y respeto recíproco; formar el sentido de responsabilidad y amistad; así como estimular el mayor espíritu de superación y convivencia social, la competitividad, la tenacidad, el autoestima y el bienestar de la población..</p>
+	    
+	    {# <a href="#" class="button darker rarr">MORE ABOUT US</a> #}
+	    <div class="cl">&nbsp;</div>
+	{% endblock %}
+
+	{% block barra1 %}
+		<div id="latest-projects">
+		    <h2 class="eye">
+		        <span>Eventos destacatos</span>
+		        <a href="#" class="see-all">VER TODOS</a>
+		    </h2>
+		    
+		    <div class="latest-projects-list">
+		        <ul>
+		            <!-- Project -->
+		            <li>
+		                <div class="image">
+		                    <a href="images/05.jpg">
+		                    <img src="{{ asset('images/05.jpg') }}" alt="Symfony!" /></a>
+
+		                </div>
+
+		                <div class="entry">
+		                    <h3>Encuentro juvenil</h3>
+		                    
+		                    <p>Impulsaldo el Deporte en el Municipio,se llevan a cabo diferntes encuentros juveniles donde compiten en en una variedad de disciplinas</p>
+		                   <!-- 
+		                    <a href="#" class="button rarr">SEE THE PROJECT</a>-->
+		                </div>
+		            </li>
+		            <!-- /Project -->
+		            
+		            <!-- Project -->
+		            <li>
+		                <div class="image">
+		                    <a href="mages/lanc.jpg">
+		                    <img src="{{ asset('images/lanc.jpg') }}" alt="Symfony!" /></a>
+		                </div>
+
+		                <div class="entry">
+		                    <h3>Carreras en lanchas</h3>
+		                    
+		                    <p>Esta semana santa se celebraron muchos partidos y carreras entre ellas, la carrera en lanchas. Pueden observar una imagen, a uno de los competidores</p>
+		                    
+		                    <!--<a href="#" class="button rarr">SEE THE PROJECT</a>-->
+		                </div>
+		            </li>
+		            <!-- /Project -->
+		            
+		            <!-- Project -->
+		            <li class="last">
+		                <div class="image">
+		                    <a href="images/fuerza.jpg">
+		                    <img src="{{ asset('images/fuerza.jpg') }}" alt="Symfony!" /></a>
+		                </div>
+
+		                <div class="entry">
+		                    <h3>Jugadas destacadas</h3>
+		                    
+		                    <p>Las jugadasmas destacadas que se dieron durante el partido de Voleibol. llevado a cabo en el golfo durante las celebraciones de la semana Mayor en muestro municipio</p>
+		                    
+		                    <!--<a href="#" class="button rarr">SEE THE PROJECT</a>-->
+		                </div>
+		            </li>
+		            <!-- /Project -->
+		        </ul>
+		        <div class="cl">&nbsp;</div>
+		    </div>
+		</div>
+	{% endblock %}
+
+	{% block barra2 %}
+    	{# <div id="blog">
+            <h2 class="bubble">
+                <span>FROM OUR BLOG</span>
+                <a href="#" class="latest-articles">LATEST ARTICLES</a>
+            </h2>
+            
+            <div class="blog-posts">
+                <ul>
+                    <!-- Blog Post -->
+                    <li>
+                        <h3>Chill yo?</h3>
+                        <h4>posted on 12.06.2010 by <a href="#">John</a></h4>
+                        
+                        <div class="image">
+                            <img src="{{ asset('css/pixel/images/blog-post-1.jpg') }}" alt="Symfony!" />
+                        </div>
+                        
+                        <div class="data">
+                            <p>Vestibulum commodo diam quis libero cursus fermentum. Mauris ac felis erat, nec pretium nibh. Vestibulum imperdiet, urna id cursus volutpat, odio arcu pellentesque lacus, ac porta felis dolor vel neque.</p>
+                            <p class="last">um sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi molestie commodo urna <a href="#">&hellip;</a></p>
+                        </div>
+                        <div class="cl">&nbsp;</div>
+                        
+                        <div class="buttons">
+                            <a href="#" class="button rarr">READ MORE</a>
+                            <a href="#" class="button comments">COMMENTS</a>
+                            <div class="cl">&nbsp;</div>
+                        </div>
+                    </li>
+                    <!-- /Blog Post -->
+                    
+                    <!-- Blog Post -->
+                    <li>
+                        <h3>Ni hao stree art.</h3>
+                        <h4>posted on 12.06.2010 by <a href="#">John</a></h4>
+                        
+                        <div class="image">
+                            <img src="{{ asset('css/pixel/images/blog-post-2.jpg') }}" alt="Symfony!" />
+                        </div>
+                        
+                        <div class="data">
+                            <p>Proin justo sem, ornare non pharetra vel, gravida at metus. Donec imperdiet varius diam, sit amet volutpat ante viverra ut. Ut quis cursus nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In tristique blandit dignissim. Vivamus et magna vitae magna suscipit rhoncus eget in mi <a href="#">&hellip;</a></p>
+                        </div>
+                        <div class="cl">&nbsp;</div>
+                        
+                        <div class="buttons">
+                            <a href="#" class="button rarr">READ MORE</a>
+                            <a href="#" class="button comments">COMMENTS</a>
+                            <div class="cl">&nbsp;</div>
+                        </div>
+                    </li>
+                    <!-- /Blog Post -->
+                    
+                    <!-- Blog Post -->
+                    <li class="last">
+                        <h3>Not so Fast but furious...</h3>
+                        <h4>posted on 12.06.2010 by <a href="#">John</a></h4>
+                        
+                        <div class="image">
+                            <img src="{{ asset('css/pixel/images/blog-post-3.jpg') }}" alt="Symfony!" />
+                        </div>
+                        
+                        <div class="data">
+                            <p>Proin justo sem, ornare non pharetra vel, gravida at metus. Donec imperdiet varius diam, sit amet volutpat ante viverra ut. Ut quis cursus nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In tristique blandit dignissim. Vivamus et magna vitae magna suscipit rhoncus eget in mi.</p>
+                        </div>
+                        <div class="cl">&nbsp;</div>
+                        
+                        <div class="buttons">
+                            <a href="#" class="button rarr">READ MORE</a>
+                            <a href="#" class="button comments">COMMENTS</a>
+                            <div class="cl">&nbsp;</div>
+                        </div>
+                    </li>
+                    <!-- /Blog Post -->
+                </ul>
+            </div>
+        </div> {# fin div blog #} 
+	{% endblock %}
+
+	{% block sidebar %}
+	{# <div id="sidebar">
+	    <h2>USEFULL STUFF?</h2>
+	        
+	        <div class="stuff">
+	            <ul>
+	                <!-- Useful thing -->
+	                <li>
+	                    <h3 class="wheels">Who , What and Why?</h3>
+	                    
+	                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida libero id risus rutrum adipiscing. Maecenas libero ligula, accumsan a luctus non, <a href="#">aliquet sed dolor</a>.</p>
+	                </li>
+	                <!-- /Useful thing -->
+	                
+	                <!-- Useful thing -->
+	                <li>
+	                    <h3 class="tic-tac">Tic-tac, it is working!</h3>
+	                    
+	                    <p>Nam vitae libero elit, a fermentum odio. Sed sollicitudin feugiat turpis a porttitor. Suspendisse in est diam. Suspendisse est risus, lobortis sit amet feugiat et, iaculis et lectus. <a href="#">Morbi sit amet felis</a></p>
+	                </li>
+	                <!-- /Useful thing -->
+	                
+	                <!-- Useful thing -->
+	                <li>
+	                    <h3 class="cup">Freshless?</h3>
+	                    
+	                    <p>Curabitur accumsan, velit vitae varius laoreet, mi quam dignissim arcu, rutrum volutpat lectus orci eget enim. Nulla sit amet tristique erat. Curabitur cursus gravida erat, ut <a href="#">lobortis ligula</a></p>
+	                </li>
+	                <!-- /Useful thing -->
+	                
+	                <!-- Useful thing -->
+	                <li>
+	                    <h3 class="sync">Something from nothing.</h3>
+	                    
+	                    <p>Suspendisse est risus, lobortis sit amet feugiat et, iaculis et lectus. Morbi sit amet felis non risus consequat pharetra. Nunc congue tempor purus, at faucibus magna auctor eget. <a href="#">Integer tristiqu</a></p>
+	                </li>
+	                <!-- /Useful thing -->
+	            </ul>
+	        </div>
+	    </div> #}
+
+	{% endblock %}
+
+
+	{% block footer %}
+        {{ parent() }}
+	{% endblock %}

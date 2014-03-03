@@ -1,0 +1,89 @@
+{% extends "ProyectoPrincipalBundle:Default:layout.html.twig" %}
+
+{% block body %}
+    {{ parent() }}
+{% endblock %}
+{# fin del block body #}
+
+{% block menu %}
+    {{ parent() }}
+{% endblock %}
+
+ {% block menucito %}
+    {{ parent() }}
+ {% endblock %}
+ 
+ {% block texto %}
+        {# inicio del form #}
+        <form>
+            {% if tipo is defined %}
+
+                {% if tipo == 'categoria' %}
+
+                        Nombre Categoria<input type='text' id='nombre_categoria' placeholder='Nombre categoria' value='{{registro.nombre}}' id_registro='{{registro.idcategoria}}'>
+
+                {% elseif tipo == 'cancha' %}
+
+                        Nombre de la cancha<input type='text' id='nombre_cancha' placeholder='Ingrese Nombre de la cancha' value='{{registro.nombre}}' id_registro='{{registro.idcancha}}'>
+
+                        Direccion de la cancha<input type='text' id='direccion_cancha' placeholder='Ingrese Direccion de la cancha' value='{{registro.direccion}}'>
+
+                {% elseif tipo == 'entrenador' %}                       
+
+                        Nombre<input type='text' id='nombre_entrenador' placeholder='Ingrese Nombre del entrenador' value='{{registro.nombre}}' id_registro='{{registro.identrenador}}'>
+
+                        Cedula<input type='text' id = 'cedula_entrenador' placeholder='Ingrese la cedula del entrenador' value='{{registro.cedula}}'>
+                        <br>
+                        Disciplina<input type="text" id = 'disciplina_entrenador' placeholder='Ingrese la disciplina del entrenador' value={{registro.disciplina}}>
+                        <br>
+                        Direccion de residencia<input type="text" id = 'direccion_entrenador' placeholder="Ingrese la direccion de residencia del Entrenador" value={{registro.direccion}}>
+                                          
+                {% elseif tipo == 'deporte' %}
+
+                        Nombre<input type="text" class = 'deporte_nombre_deporte vaciar_deporte' placeholder="Ingrese Nombre del Deporte" value='{{registro.nombre}}' id_registro='{{registro.iddeportes}}'>
+                        <br>
+                         Seleccione Entrenador
+                        <select class='deporte_nombre_entrenador'>
+                            <option value= ' ' selected></option>
+                            {% for entrenadores in arreglo.entrenadores %}
+                                <option value={{entrenadores.identrenador}}>{{entrenadores.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                        Seleccione Categoria
+                        <select class='deporte_nombre_categoria'>
+                            <option value= ' ' selected></option>
+                            {% for categorias in arreglo.categorias %}
+                                <option value={{categorias.idcategoria}}>{{categorias.nombre}}</option>
+                            {% endfor %}
+                        </select> 
+                        <br>
+                        Seleccione Cancha
+                        <select class='deporte_nombre_cancha'>
+                            <option value= ' ' selected></option>
+                            {% for canchas in arreglo.canchas %}
+                                <option value={{canchas.idcancha}}>{{canchas.nombre}}</option>
+                            {% endfor %}
+                        </select>                      
+                {% endif %}
+                
+            {% else %}
+
+                <h1>Bienvenido seleccione una opcion</h1>
+
+            {% endif %}
+                        <input type='hidden' id='tipo' value={{tipo}}>
+                        <input type='button' value='Actualizar' class='actualizar'>
+            </form> 
+            {# fin del formulario generico #}
+        </div>
+        {# fin div section #}
+    </div>
+    {# fin div content #}
+ {% endblock %}
+
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+{# fin de block footer #}

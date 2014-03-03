@@ -1,0 +1,35 @@
+segundo:
+    pattern:  /prueba/
+    defaults: { _controller: ProyectoPrincipalBundle:Inicio:prueba }
+pruebaAjax:
+    pattern:  /pruebaAjax/
+    defaults: { _controller: ProyectoPrincipalBundle:Inicio:pruebaAjax }
+    requirements:
+      _method: POST
+front:
+    pattern:  /front/{slug}/
+    defaults:  { _controller: ProyectoPrincipalBundle:Inicio:front, slug: ' ' }
+agregar:
+    pattern:  /front/usuario/agregar/{slug}/
+    defaults:  { _controller: ProyectoPrincipalBundle:Agregar:agregar, slug: ' ' }
+agregarAjax:
+    pattern:  front/usuario/agregarAjax
+    defaults: { _controller: ProyectoPrincipalBundle:Agregar:agregarAjax }
+    requirements:
+      _method: POST
+listar:
+    pattern:  /front/usuario/listar/{slug}
+    defaults:  { _controller: ProyectoPrincipalBundle:Listar:listar, slug: ' ' }
+editarProyecto:
+    pattern:  /front/usuario/editar/{id}/{tipo}
+    defaults:  { _controller: ProyectoPrincipalBundle:Editar:editar, id: ' ', tipo: ' ' }
+editarAjax:
+    pattern:  /front/usuario/editarAjax/
+    defaults: { _controller: ProyectoPrincipalBundle:Editar:editarAjax }
+    requirements:
+      _method: POST
+eliminarAjax:
+    pattern:  /front/usuario/eliminarAjax/
+    defaults: { _controller: ProyectoPrincipalBundle:Eliminar:eliminarAjax }
+    requirements:
+      _method: POST

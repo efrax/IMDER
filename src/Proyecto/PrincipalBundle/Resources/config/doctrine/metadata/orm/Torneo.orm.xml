@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Torneo" table="Torneo">
+    <id name="idtorneo" type="integer" column="idTorneo">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombre" type="string" column="Nombre" length="45" nullable="true"/>
+    <field name="premio" type="string" column="Premio" length="45" nullable="true"/>
+    <many-to-one field="deportes" target-entity="Deportes">
+      <join-columns>
+        <join-column name="Deportes" referenced-column-name="idDeportes"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="categoria" target-entity="Categoria">
+      <join-columns>
+        <join-column name="Categoria" referenced-column-name="idCategoria"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="cancha" target-entity="Cancha">
+      <join-columns>
+        <join-column name="Cancha" referenced-column-name="idCancha"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
