@@ -44,7 +44,6 @@ class AgregarController extends Controller{
                 // echo "<pre>";                
                 // var_dump($arreglo);
                 // echo "</pre>";
-
             case 'equipo':
                 # code...
                 break;
